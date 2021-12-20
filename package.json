@@ -19,9 +19,18 @@
 	"files": [
 		"dist"
 	],
-	"main": "dist/index.js",
+	"main": "./dist/index.js",
+	"module": "./dist-esm/index.js",
+	"exports": {
+		".": {
+			"require": "./dist/index.js",
+			"import": "./dist-esm/index.js"
+		}
+	},
 	"scripts": {
-		"build": "tsc",
+		"build": "npm run build:cjs && npm run build:esm",
+		"build:cjs": "tsc",
+		"build:esm": "tsc --outDir dist-esm --module esnext",
 		"test": "jest --coverage",
 		"lint": "eslint ."
 	},
@@ -66,6 +75,7 @@
 		"webpack5": "npm:webpack@^5.0.0"
 	},
 	"eslintConfig": {
-		"extends": "@pvtnbr"
+		"extends": "@pvtnbr",
+		"ignorePatterns": ["dist-esm"]
 	}
 }
