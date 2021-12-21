@@ -6,7 +6,7 @@ import type {
 } from 'tapable';
 import type { Source } from 'webpack-sources';
 import { matchObject } from 'webpack/lib/ModuleFilenameHelpers.js';
-import { MinifyPluginOptions } from './interfaces';
+import { MinifyPluginOptions } from './interfaces.js';
 
 type StatsPrinter = {
 	hooks: {

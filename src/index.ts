@@ -1,3 +1,3 @@
-export { default } from './loader';
-export { default as ESBuildPlugin } from './plugin';
-export { default as ESBuildMinifyPlugin } from './minify-plugin';
+export { default } from './loader.js';
+export { default as ESBuildPlugin } from './plugin.js';
+export { default as ESBuildMinifyPlugin } from './minify-plugin.js';
